@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-title>Actions Buttons</mat-card-title>
+    <mat-card-subtitle>Schalter zum Ein und Aus schalten</mat-card-subtitle>
+    <mat-card-actions class="action-buttons">
+        <button mat-raised-button color="primary">ON</button>
+        <button mat-raised-button color="warn">OFF</button>
+    </mat-card-actions>
+</mat-card>
+<br>
+<mat-card>
+    <mat-card-title>Kontrollleuchte</mat-card-title>
+    <mat-card-subtitle>Leuchtet wenn eingeschaltet</mat-card-subtitle>
+    <mat-card-actions class="action-icons">
+        <button *ngIf="statusOn; else statusOff" mat-fab color="primary">
+            <mat-icon>
+                <span class="material-symbols-outlined">flashlight_on</span>
+            </mat-icon>
+        </button>
+        <ng-template #statusOff>
+            <button mat-fab color="warn">
+                <mat-icon>
+                    <span class="material-symbols-outlined">flashlight_off</span>
+                </mat-icon>
+            </button>
+        </ng-template>
+    </mat-card-actions>
+</mat-card>
